@@ -5,9 +5,9 @@
 defined('MOODLE_INTERNAL') || die();
 
 // A description shown in the admin theme selector.
-$string['choosereadme'] = 'Theme kristian is a child theme of Boost. It adds the ability to upload background photos.';
+$string['choosereadme'] = 'Theme akt is a child theme of Boost. It adds the ability to upload background photos.';
 // The name of our plugin.
-$string['pluginname'] = 'Kristian theme';
+$string['pluginname'] = 'akt theme';
 // We need to include a lang string for each block region.
 $string['region-side-pre'] = 'Right';
 // The name of the second tab in the theme settings.
@@ -17,7 +17,7 @@ $string['brandcolor'] = 'Brand colour';
 // The brand colour setting description.
 $string['brandcolor_desc'] = 'The accent colour.';
 // Name of the settings pages.
-$string['configtitle'] = 'Kristian settings';
+$string['configtitle'] = 'akt settings';
 // Name of the first settings tab.
 $string['generalsettings'] = 'General settings';
 // Preset files setting.

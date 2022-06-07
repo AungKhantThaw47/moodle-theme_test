@@ -10,22 +10,22 @@ defined('MOODLE_INTERNAL') || die();
 if ($ADMIN->fulltree) {
 
     // Boost provides a nice setting page which splits settings onto separate tabs. We want to use it here.
-    $settings = new theme_boost_admin_settingspage_tabs('themesettingkristian', get_string('configtitle', 'theme_kristian'));
+    $settings = new theme_boost_admin_settingspage_tabs('themesettingakt', get_string('configtitle', 'theme_akt'));
 
     // Each page is a tab - the first is the "General" tab.
-    $page = new admin_settingpage('theme_kristian_general', get_string('generalsettings', 'theme_kristian'));
+    $page = new admin_settingpage('theme_akt_general', get_string('generalsettings', 'theme_akt'));
 
     // Replicate the preset setting from boost.
-    $name = 'theme_kristian/preset';
-    $title = get_string('preset', 'theme_kristian');
-    $description = get_string('preset_desc', 'theme_kristian');
+    $name = 'theme_akt/preset';
+    $title = get_string('preset', 'theme_akt');
+    $description = get_string('preset_desc', 'theme_akt');
     $default = 'default.scss';
 
     // We list files in our own file area to add to the drop down. We will provide our own function to
     // load all the presets from the correct paths.
     $context = context_system::instance();
     $fs = get_file_storage();
-    $files = $fs->get_area_files($context->id, 'theme_kristian', 'preset', 0, 'itemid, filepath, filename', false);
+    $files = $fs->get_area_files($context->id, 'theme_akt', 'preset', 0, 'itemid, filepath, filename', false);
 
     $choices = [];
     foreach ($files as $file) {
@@ -40,9 +40,9 @@ if ($ADMIN->fulltree) {
     $page->add($setting);
 
     // Preset files setting.
-    $name = 'theme_kristian/presetfiles';
-    $title = get_string('presetfiles','theme_kristian');
-    $description = get_string('presetfiles_desc', 'theme_kristian');
+    $name = 'theme_akt/presetfiles';
+    $title = get_string('presetfiles','theme_akt');
+    $description = get_string('presetfiles_desc', 'theme_akt');
 
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'preset', 0,
                                                   array('maxfiles' => 20, 'accepted_types' => array('.scss')));
@@ -50,9 +50,9 @@ if ($ADMIN->fulltree) {
 
     // Variable $brand-color.
     // We use an empty default value because the default colour should come from the preset.
-    $name = 'theme_kristian/brandcolor';
-    $title = get_string('brandcolor', 'theme_kristian');
-    $description = get_string('brandcolor_desc', 'theme_kristian');
+    $name = 'theme_akt/brandcolor';
+    $title = get_string('brandcolor', 'theme_akt');
+    $description = get_string('brandcolor_desc', 'theme_akt');
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
@@ -61,17 +61,17 @@ if ($ADMIN->fulltree) {
     $settings->add($page);
 
     // Advanced settings.
-    $page = new admin_settingpage('theme_kristian_advanced', get_string('advancedsettings', 'theme_kristian'));
+    $page = new admin_settingpage('theme_akt_advanced', get_string('advancedsettings', 'theme_akt'));
 
     // Raw SCSS to include before the content.
-    $setting = new admin_setting_configtextarea('theme_kristian/scsspre',
-                                                get_string('rawscsspre', 'theme_kristian'), get_string('rawscsspre_desc', 'theme_kristian'), '', PARAM_RAW);
+    $setting = new admin_setting_configtextarea('theme_akt/scsspre',
+                                                get_string('rawscsspre', 'theme_akt'), get_string('rawscsspre_desc', 'theme_akt'), '', PARAM_RAW);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
     // Raw SCSS to include after the content.
-    $setting = new admin_setting_configtextarea('theme_kristian/scss', get_string('rawscss', 'theme_kristian'),
-                                                get_string('rawscss_desc', 'theme_kristian'), '', PARAM_RAW);
+    $setting = new admin_setting_configtextarea('theme_akt/scss', get_string('rawscss', 'theme_akt'),
+                                                get_string('rawscss_desc', 'theme_akt'), '', PARAM_RAW);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 

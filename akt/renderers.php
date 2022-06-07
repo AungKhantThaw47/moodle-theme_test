@@ -4,7 +4,7 @@ defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->dirroot . '/course/renderer.php');
 
-class theme_kristian_core_course_renderer extends core_course_renderer {
+class theme_akt_core_course_renderer extends core_course_renderer {
     /**
      * Renders HTML to display one course module in a course section
      *

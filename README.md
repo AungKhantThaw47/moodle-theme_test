@@ -1,4 +1,4 @@
-# moodle-theme_kristian
+# moodle-theme_akt
 
 This theme was created as part of a series of tutorial videos you can find here: https://www.youtube.com/watch?v=WLa1ZS3kdWU
 
